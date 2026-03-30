@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-work: #e74c3c;
+  --color-short-break: #2ecc71;
+  --color-long-break: #3498db;
+  --color-bg: #1a1a2e;
+  --color-surface: #16213e;
+  --color-text: #eaeaea;
+  --color-text-muted: #8a8a9a;
+  --current-color: var(--color-work);
+
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  width: 100%;
+}
+
+.mode-label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--current-color);
+  transition: color 0.3s ease;
+}
+
+.timer-display {
+  font-size: 6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 4px;
+  color: var(--color-text);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--current-color) 30%, transparent);
+  transition: text-shadow 0.3s ease;
+}
+
+.session-info {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--current-color);
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+
+.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid #2a2a4a;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #1e2a4a;
+}
+
+.skip-container {
+  margin-top: 5px;
+}
+
+.btn-skip {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.btn-skip:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+/* Phase-specific theming applied via data attribute on body */
+body[data-phase="work"] { --current-color: var(--color-work); }
+body[data-phase="short-break"] { --current-color: var(--color-short-break); }
+body[data-phase="long-break"] { --current-color: var(--color-long-break); }
