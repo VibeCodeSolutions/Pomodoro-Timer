@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <radialGradient id="tomatoBody" cx="0.38" cy="0.36" r="0.78">
+      <stop offset="0%" stop-color="#ff6b5e"/>
+      <stop offset="55%" stop-color="#e63946"/>
+      <stop offset="100%" stop-color="#b02a3a"/>
+    </radialGradient>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5cb85c"/>
+      <stop offset="100%" stop-color="#2f7d32"/>
+    </linearGradient>
+    <linearGradient id="leafGradDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4caf50"/>
+      <stop offset="100%" stop-color="#256428"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tomato body: slightly squat, classic Pomodoro shape -->
+  <ellipse cx="512" cy="580" rx="380" ry="360" fill="url(#tomatoBody)"/>
+
+  <!-- Subtle vertical seam highlight (clock 12 hint) -->
+  <path d="M 512 240 Q 498 460 512 920" stroke="#c92439" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.35"/>
+  <path d="M 512 240 Q 526 460 512 920" stroke="#c92439" stroke-width="6" stroke-linecap="round" fill="none" opacity="0.25"/>
+
+  <!-- Specular highlight (timer face suggestion, soft) -->
+  <ellipse cx="380" cy="430" rx="120" ry="80" fill="#ffffff" opacity="0.28"/>
+  <ellipse cx="360" cy="410" rx="55" ry="35" fill="#ffffff" opacity="0.38"/>
+
+  <!-- Leaf crown (5 leaves) -->
+  <g transform="translate(512 240)">
+    <!-- Back leaves -->
+    <path d="M 0 0 Q -150 -90 -210 -30 Q -160 30 -60 20 Z" fill="url(#leafGradDark)"/>
+    <path d="M 0 0 Q 150 -90 210 -30 Q 160 30 60 20 Z" fill="url(#leafGradDark)"/>
+    <!-- Front leaves -->
+    <path d="M 0 0 Q -110 -140 -160 -80 Q -90 -20 -10 -5 Z" fill="url(#leafGrad)"/>
+    <path d="M 0 0 Q 110 -140 160 -80 Q 90 -20 10 -5 Z" fill="url(#leafGrad)"/>
+    <!-- Center leaf (tallest) -->
+    <path d="M 0 5 Q -45 -160 0 -200 Q 45 -160 0 5 Z" fill="url(#leafGrad)"/>
+    <!-- Stem -->
+    <rect x="-12" y="-30" width="24" height="50" rx="8" fill="#3d2817"/>
+  </g>
+
+  <!-- Tiny timer dot at "12 o'clock" position on the tomato — playful nod -->
+  <circle cx="512" cy="280" r="14" fill="#fff8e1" opacity="0.85"/>
+  <circle cx="512" cy="280" r="6" fill="#c92439"/>
+</svg>
